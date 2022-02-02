@@ -4,7 +4,7 @@
  * http://creativecommnos.org/licenses/by-nc-sa/4.0/
  */
 
-package EntregablePOO;
+package geeye;
 
 /**
  *
@@ -13,5 +13,7 @@ package EntregablePOO;
  * @date 1 feb. 2022 16:15:48
  */
 public class Main {
+    
+    
 
 }
