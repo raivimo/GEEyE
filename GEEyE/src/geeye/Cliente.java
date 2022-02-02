@@ -52,19 +52,17 @@ public class Cliente {
         this.nombre = nombre;
     }
     
-    /*
-    public void setAforo(int aforo){
-        if (aforo > 0) {
-            this. = aforo;
-        }
-    }
-    */
     
     public void setNumCliente(int numCliente){
         this.numCliente = numCliente;
     }
     
+    public String getAll(){
+        return ("Nº Cliente: " + numCliente + "  Nombre y Apellidos: " + nombre + " " + apellidos + "  Dirección: " + direccion + "  TLF: " + telf);
+    }
     
-    
+    public void imprimirCliente(){
+        getAll();
+    }
     
 }
