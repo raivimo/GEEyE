@@ -4,7 +4,7 @@
  * http://creativecommnos.org/licenses/by-nc-sa/4.0/
  */
 
-package EntregablePOO;
+package geeye;
 
 /**
  *
@@ -27,5 +27,44 @@ public class Cliente {
         this.numCliente = numCliente;
     }
     
+    //METODOS
+    public String getNombre() {
+        return nombre;
+    }
+    
+    public String getApellidos() {
+        return apellidos;
+    }
+    
+    public String getDireccion() {
+        return direccion;
+    }
+    
+    public String getTelefono(){
+        return telf;
+    }
 
+    public int getNumCliente() {
+        return numCliente;
+    }
+    
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+    
+    /*
+    public void setAforo(int aforo){
+        if (aforo > 0) {
+            this. = aforo;
+        }
+    }
+    */
+    
+    public void setNumCliente(int numCliente){
+        this.numCliente = numCliente;
+    }
+    
+    
+    
+    
 }
