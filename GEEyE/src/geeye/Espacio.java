@@ -17,13 +17,13 @@ public class Espacio {
     // Atributos
     private String nombre;
     private int aforo;
-    private boolean interiorExterior;
+    private boolean esInterior;
             
     // Constructor
-    public Espacio(String nombre, int aforo, boolean interiorExterior) {
+    public Espacio(String nombre, int aforo, boolean esInterior) {
         this.nombre = nombre;
         this.aforo = aforo;
-        this.interiorExterior = interiorExterior;
+        this.esInterior = esInterior;
     }
     
     // Getters y Setters
@@ -44,16 +44,16 @@ public class Espacio {
     }
 
     public boolean isInteriorExterior() {
-        return interiorExterior;
+        return esInterior;
     }
 
-    public void setInteriorExterior(boolean interiorExterior) {
-        this.interiorExterior = interiorExterior;
+    public void setInteriorExterior(boolean esInterior) {
+        this.esInterior = esInterior;
     }
     
     // Devuelve un Sring con la información del espacio
     public String getAll(){
-        return (nombre+ " "+ aforo + " " + interiorExterior);
+        return ("Nombre del Espacio: " + nombre+ " Aforo del Espacio: "+ aforo + " El espacio es Interior:" + esInterior);
     }
     // Imprimir la inforción del espacio
     public void imprimirEspacio(){
