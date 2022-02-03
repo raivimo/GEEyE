@@ -19,7 +19,7 @@ public class Cliente {
     private String telf;
     private int numCliente;
 
-    public Cliente(String nombre, String apellidos, String direccion, String telf, int numCliente) {
+    public Cliente(String nombre, String apellidos, int numCliente, String direccion, String tlf) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.direccion = direccion;
@@ -57,12 +57,8 @@ public class Cliente {
         this.numCliente = numCliente;
     }
     
-    public String getAll(){
-        return ("Nº Cliente: " + numCliente + "  Nombre y Apellidos: " + nombre + " " + apellidos + "  Dirección: " + direccion + "  TLF: " + telf);
-    }
-    
     public void imprimirCliente(){
-        getAll();
+        System.out.println("Nombre de Cliente: " + nombre + " Apellidos del Cliente: " + apellidos + " Numero del Cliente : " + numCliente + " Dirección del cliente : " + direccion + " Telefono del Cliente: " + telf);
     }
     
 }

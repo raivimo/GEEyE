@@ -14,13 +14,13 @@ package geeye;
  */
 public class Reserva {
     //Atributos
-    private int fechaReserva;
+    private String fechaReserva;
     private int idReserva;
     private int numComensales;
     private boolean pagado;
 
     //Constructor
-    public Reserva(int fechaReserva, int idReserva, int numComensales, boolean pagado){
+    public Reserva(String fechaReserva, int idReserva, int numComensales, boolean pagado){
         this.fechaReserva = fechaReserva;
         this.idReserva = idReserva;
         this.numComensales = numComensales;
@@ -28,7 +28,7 @@ public class Reserva {
     }
     
     //Getters
-    public int getFechaReserva() {
+    public String getFechaReserva() {
         return fechaReserva;
     }
     
@@ -45,7 +45,7 @@ public class Reserva {
     }
     
     //Setters
-    public void setFechaReserva(int fechaReserva) {
+    public void setFechaReserva(String fechaReserva) {
         this.fechaReserva = fechaReserva;
     }
 

@@ -48,6 +48,12 @@ public class Main {
                 case 1:
                     equipo.verEspacios();
                     break;
+                case 2:
+                    equipo.verClientes();
+                    break;
+                case 3:
+                    equipo.verReservas();
+                    break;
                 case 4:
                     in.nextLine();
                     System.out.println("Introduce nombre del Espacio");
@@ -57,7 +63,7 @@ public class Main {
                     System.out.println("¿Es interior? (true/false");
                     boolean esInterior = in.nextBoolean();
                     equipo.anyadirEspacio(nombre, aforo, esInterior);
-                    break;
+                    break; 
                 case 5:
                     equipo.verEspacios();
                     System.out.println("Intruduce nº posición del espacio que deseas borrar");
@@ -65,7 +71,45 @@ public class Main {
                     equipo.eliminarEspacio(borrarEspacio);
                     break;
                 case 6:
-                    
+                    in.nextLine();
+                    System.out.println("Introduce nombre del Cliente: ");
+                    nombre = in.nextLine();
+                    System.out.println("Introduce apellidos del Cliente: ");
+                    String apellidos = in.nextLine();
+                    System.out.println("Introduce el número de Cliete: ");
+                    int numCliente = in.nextInt();
+                    in.nextLine();
+                    System.out.println("Introduce la dirección");
+                    String direccion = in.nextLine();
+                    System.out.println("Introduce el teléfono: ");
+                    String telf = in.nextLine();
+                    equipo.anyadirCliente(nombre, apellidos, numCliente, direccion, telf);
+                    break;
+                case 7:
+                    equipo.verClientes();
+                    System.out.println("Introduce la posción del cliente a borrar: ");
+                    int posCliente = in.nextInt();
+                    equipo.eliminarCliente(posCliente);
+                    break;
+                case 9:
+                    in.nextLine();
+                    System.out.println("Dime la fecha del evento: dd/mm/aaaa");
+                    String fechaReserva = in.nextLine();
+                    System.out.println("Escribe un ID de Reserva:");
+                    int idReserva = in.nextInt();
+                    System.out.println("Dime el Numero de Comensales del Evento");
+                    int numComensales = in.nextInt();
+                    in.nextLine();
+                    System.out.println("¿Vas a pagar ahora la reserva. Si = true / No = false");
+                    boolean pagado = in.nextBoolean();
+                    equipo.anyadirReserva(fechaReserva, idReserva, numComensales, pagado);
+                    break;
+                case 10:
+                    System.out.println("Dime la posicion de la reserva a borrar: ");
+                    int borrarReserva = in.nextInt();
+                    equipo.eliminarReserva(borrarReserva);
+                    break;
+                            
                 case 12:
                     salir = true;
                     break;
