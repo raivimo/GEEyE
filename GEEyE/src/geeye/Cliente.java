@@ -19,7 +19,7 @@ public class Cliente {
     private String telf;
     private int numCliente;
 
-    public Cliente(String nombre, String apellidos, int numCliente, String direccion, String tlf) {
+    public Cliente(String nombre, String apellidos, int numCliente, String direccion, String telf) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.direccion = direccion;
