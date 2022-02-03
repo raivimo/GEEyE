@@ -28,6 +28,12 @@ public class Eventos {
     Cliente[] arrayClientes = new Cliente[maxClientes];
     Espacio[] arrayEspacios = new Espacio[maxEspacios];
     
+    public Eventos() {    
+        arrayEspacios[0] = new Espacio ("Cartuja", 500, true);
+        arrayEspacios[1] = new Espacio ("Vallesa de Mandor", 150, false);
+        arrayEspacios[2] = new Espacio ("Palacio de los Congresos", 50, true);
+    }
+    
     //Metodos
     public void verEspacios(){
         if(cuantosEspacio == 0)
@@ -40,7 +46,7 @@ public class Eventos {
         }
     }
     
-    public void anyadirEspacio(String nombre, int aforo, boolean esInterior){
+    /*public void anyadirEspacio(String nombre, int aforo, boolean esInterior){
         if( cuantosEspacio > 5)
             System.err.println("Máximo numero de espacios alcanzado, borre uno.");
         else{
@@ -48,6 +54,7 @@ public class Eventos {
             cuantosEspacio++;
         }
     }
+*/
     
     public void eliminarEspacio(int posicion) {
         if ( posicion >= 0){

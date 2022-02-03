@@ -51,13 +51,9 @@ public class Espacio {
         this.esInterior = esInterior;
     }
     
-    // Devuelve un Sring con la información del espacio
-    public String getAll(){
-        return ("Nombre del Espacio: " + nombre+ " Aforo del Espacio: "+ aforo + " El espacio es Interior:" + esInterior);
-    }
     // Imprimir la inforción del espacio
     public void imprimirEspacio(){
-        System.out.println(getAll());
+        System.out.println("Nombre del Espacio: " + nombre + " Aforo del Espacio: " + aforo + " ¿Es Interior? " + esInterior);
     }
     
 }
