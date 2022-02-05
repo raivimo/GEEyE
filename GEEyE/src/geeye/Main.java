@@ -42,7 +42,6 @@ public class Main {
         Eventos equipo = new Eventos ();
         boolean salir = false;
         
-        
         do {
             menu();
             int opcion = in.nextInt();
@@ -58,7 +57,6 @@ public class Main {
                     System.out.println("");
                     break;
                 case 3:
-                    
                     System.out.println("--------  RESERVAS ----------");
                     equipo.verReservas();
                     System.out.println("");

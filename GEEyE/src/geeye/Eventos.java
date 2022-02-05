@@ -48,7 +48,7 @@ public class Eventos {
 
     public void eliminarEspacio(int posicion) {
         if ( posicion >= 0){
-            for (int i = posicion + 1; i <= cuantosEspacio; i++) {
+            for (int i = posicion + 1; i < cuantosEspacio; i++) {
                 arrayEspacios[i-1] = arrayEspacios[i];
             }
             cuantosEspacio--;
