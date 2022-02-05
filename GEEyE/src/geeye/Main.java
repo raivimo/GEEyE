@@ -21,6 +21,7 @@ public class Main {
     public static void menu(){ 
         System.out.println("==BIENVENIDO A GESTIÓN DE ESPACIOS Y EVENTOS==");
         System.out.println("==========POR IAN, CRISTINA Y RAIMON==========");
+        System.out.println("");
         System.out.println("======== Seleciona una opción del Menú =======");
         System.out.println("1.- Ver Espacios Disponibles.");
         System.out.println("2.- Ver Clientes");
@@ -41,20 +42,29 @@ public class Main {
         Eventos equipo = new Eventos ();
         boolean salir = false;
         
+        
         do {
             menu();
             int opcion = in.nextInt();
             switch(opcion){
                 case 1:
+                    System.out.println("--------  ESPACIOS ----------");
                     equipo.verEspacios();
+                    System.out.println("");
                     break;
                 case 2:
+                    System.out.println("--------  CLIENTES ----------");
                     equipo.verClientes();
+                    System.out.println("");
                     break;
                 case 3:
+                    
+                    System.out.println("--------  RESERVAS ----------");
                     equipo.verReservas();
+                    System.out.println("");
                     break;
                 case 4:
+                    System.out.println("--------  AÑADIR ESPACIO ----------");
                     in.nextLine();
                     System.out.println("Introduce nombre del Espacio");
                     String nombre = in.nextLine();
@@ -63,14 +73,18 @@ public class Main {
                     System.out.println("¿Es interior? (true/false");
                     boolean esInterior = in.nextBoolean();
                     equipo.anyadirEspacio(nombre, aforo, esInterior);
+                    System.out.println("");
                     break; 
                 case 5:
+                    System.out.println("--------  BORRAR ESPACIO ----------");
                     equipo.verEspacios();
                     System.out.println("Intruduce nº posición del espacio que deseas borrar");
                     int borrarEspacio = in.nextInt();
                     equipo.eliminarEspacio(borrarEspacio);
+                    System.out.println("");
                     break;
                 case 6:
+                    System.out.println("--------  AÑADIR CLIENTE ----------");
                     in.nextLine();
                     System.out.println("Introduce nombre del Cliente: ");
                     nombre = in.nextLine();
@@ -84,14 +98,26 @@ public class Main {
                     System.out.println("Introduce el teléfono: ");
                     String telf = in.nextLine();
                     equipo.anyadirCliente(nombre, apellidos, numCliente, direccion, telf);
+                    System.out.println("");
                     break;
                 case 7:
+                    System.out.println("--------  BORRAR CLIENTE ----------");
                     equipo.verClientes();
-                    System.out.println("Introduce la posción del cliente a borrar: ");
+                    System.out.println("Introduce la posición del cliente a borrar: ");
                     int posCliente = in.nextInt();
                     equipo.eliminarCliente(posCliente);
+                    System.out.println("");
+                    break;
+                case 8:
+                    in.nextLine();
+                    System.out.println("--------  BUSCAR CLIENTE ----------");
+                    System.out.println("Dime el nombre del Cliente a buscar: ");
+                    nombre = in.nextLine();
+                    equipo.buscarCliente(nombre);
+                    System.out.println("");
                     break;
                 case 9:
+                    System.out.println("--------  AÑADIR RESERVA ----------");
                     in.nextLine();
                     System.out.println("Dime la fecha del evento: dd/mm/aaaa");
                     String fechaReserva = in.nextLine();
@@ -102,15 +128,26 @@ public class Main {
                     in.nextLine();
                     System.out.println("¿Vas a pagar ahora la reserva. Si = true / No = false");
                     boolean pagado = in.nextBoolean();
-                    equipo.anyadirReserva(fechaReserva, idReserva, numComensales, pagado);
+                    equipo.anyadirReserva(fechaReserva, idReserva, numComensales, pagado, equipo.arrayEspacios);
+                    System.out.println("");
                     break;
                 case 10:
+                    System.out.println("--------  BORRAR RESERVA ----------");
+                    equipo.verReservas();
                     System.out.println("Dime la posicion de la reserva a borrar: ");
                     int borrarReserva = in.nextInt();
                     equipo.eliminarReserva(borrarReserva);
+                    System.out.println("");
                     break;
-                            
+                case 11:
+                    System.out.println("-------- BUSCAR RESERVA ------------");
+                    System.out.println("Dime el ID de Reserva");
+                    idReserva = in.nextInt();
+                    equipo.buscarReserva(idReserva);
+                    System.out.println("");
+                    break;
                 case 12:
+                    System.out.println("--------  SALIR ----------");
                     salir = true;
                     break;
                       

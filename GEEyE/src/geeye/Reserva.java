@@ -18,13 +18,15 @@ public class Reserva {
     private int idReserva;
     private int numComensales;
     private boolean pagado;
+    private Espacio espacioAsignado;
 
     //Constructor
-    public Reserva(String fechaReserva, int idReserva, int numComensales, boolean pagado){
+    public Reserva(String fechaReserva, int idReserva, int numComensales, boolean pagado, Espacio espacioAsignado){
         this.fechaReserva = fechaReserva;
         this.idReserva = idReserva;
         this.numComensales = numComensales;
         this.pagado = pagado;
+        this.espacioAsignado = espacioAsignado;
     }
     
     //Getters
@@ -63,8 +65,8 @@ public class Reserva {
     
     //Metodos
     public void imprimir(){
-        System.out.println("Fecha de la Reserva: " + fechaReserva + " con Id de Reserva: " + idReserva + " el numero de "
-                + "Comensales es: " + numComensales + " y está pagado: " + pagado);
+        System.out.println("FECHA RESERVA: " + fechaReserva + " Id RESERVA: " + idReserva + " "
+                + "Nº.COMENSALES: " + numComensales + " ¿PAGADO? " + pagado + " ESPACIO ASIGNADO: " + espacioAsignado.getNombre());
     }
 
     

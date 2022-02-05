@@ -58,7 +58,7 @@ public class Cliente {
     }
     
     public void imprimirCliente(){
-        System.out.println("Nombre de Cliente: " + nombre + " Apellidos del Cliente: " + apellidos + " Numero del Cliente : " + numCliente + " Dirección del cliente : " + direccion + " Telefono del Cliente: " + telf);
+        System.out.println("NOMBRE DEL CLIENTE: " + nombre + " APELLIDOS: " + apellidos + " Nº.CLIENTE :" + numCliente + " DIRECCION :" + direccion + " TELEFONO: " + telf);
     }
     
 }

@@ -53,7 +53,7 @@ public class Espacio {
     
     // Imprimir la inforción del espacio
     public void imprimirEspacio(){
-        System.out.println("Nombre del Espacio: " + nombre + " Aforo del Espacio: " + aforo + " ¿Es Interior? " + esInterior);
+        System.out.println("NOMBRE ESPACIO: " + nombre + " AFORO: " + aforo + " ¿ES INTERIOR? " + esInterior);
     }
     
 }
