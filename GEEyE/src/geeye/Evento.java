@@ -1,8 +1,12 @@
 package geeye;
 
+import java.util.ArrayList;
 import java.util.Scanner;
-
-public class Eventos {
+/**
+ * Gestiona los metodos de los objetos con los que interactuaremos-
+ * @author Ian, Cristina y Raimon.
+ */
+public class Evento {
     //Variables
     private int maxClientes = 100;
     private int maxEspacios = 5;
@@ -10,48 +14,65 @@ public class Eventos {
     private int cuantosEspacio = 0;
     private int cuantosCliente = 0;
     private int cuantosReserva = 0;
-          
+    
+    //ArrayList de Objetos
+    ArrayList<Cliente> ArrayCliente = new ArrayList();
+    ArrayList<Espacio> ArrayEspacios = new ArrayList();
+    ArrayList<Reserva> ArrayReserva = new ArrayList();
+       
+         
     //Arrays de Objetos.
     Reserva[] arrayReservas = new Reserva[maxReservas];
     Cliente[] arrayClientes = new Cliente[maxClientes];
     Espacio[] arrayEspacios = new Espacio[maxEspacios];
     
     //Constructor
-    public Eventos() {    
-        arrayEspacios[0] = new Espacio ("Cartuja", 500, true);
-        arrayEspacios[1] = new Espacio ("Vallesa de Mandor", 150, false);
-        arrayEspacios[2] = new Espacio ("Palacio de los Congresos", 50, true);
-        arrayEspacios[3] = new Espacio ("Hotel Las Arenas", 100, true);
+    
+    public Evento() {    
+        ArrayEspacios.add(new Espacio ("Cartuja", 500, true));
+        ArrayEspacios.add(new Espacio ("Vallesa de Mandor", 150, false));
+        ArrayEspacios.add(new Espacio ("Palacio de los Congresos", 50, true));
+        ArrayEspacios.add( new Espacio ("Hotel Las Arenas", 100, true));
         cuantosEspacio = 4;
     }
     
     //Metodos
+    public ArrayList<Espacio> buscarNombre(String nombre){
+        //ArrayList encontrados (temporal, muestra coincidencias con nombre)
+        ArrayList<Espacio> encontrados = new ArrayList();
+        for (int i = 0; i < ArrayEspacios.size(); i++) {
+            if ( ArrayEspacios.get(i).getNombre().toUpperCase().contains(nombre.toUpperCase()) )
+                encontrados.add(ArrayEspacios.get(i));
+        }
+        for (int i = 0; i < encontrados.size(); i++) {
+            System.out.print("Posicion: " + i + " ");
+            encontrados.get(i).imprimirEspacio();
+        }
+        return encontrados;
+        
+    }
+    
+    
     public void verEspacios(){
-        if(cuantosEspacio == 0)
+        if(ArrayEspacios.isEmpty())
             System.out.println("Lo siento, cree un espacio primero");
         else{
-            for (int i = 0; i < cuantosEspacio; i++) {
+            for (int i = 0; i < ArrayEspacios.size(); i++) {
                 System.out.print(i + ". ");
-                arrayEspacios[i].imprimirEspacio();
+                ArrayEspacios.get(i).imprimirEspacio();
             }
         }
     }
     
     public void anyadirEspacio(String nombre, int aforo, boolean esInterior){
-        if( cuantosEspacio > 5)
-            System.err.println("Máximo numero de espacios alcanzado, borre uno.");
-        else{
-            arrayEspacios[cuantosEspacio] = new Espacio (nombre, aforo, esInterior);
-            cuantosEspacio++;
-        }
+        ArrayEspacios.add(new Espacio (nombre, aforo, esInterior));
     }
 
-    public void eliminarEspacio(int posicion) {
+    public void eliminarEspacio(String nombre, int posicion) {
         if ( posicion >= 0){
-            for (int i = posicion + 1; i < cuantosEspacio; i++) {
-                arrayEspacios[i-1] = arrayEspacios[i];
+            for (int i = posicion ; i < buscarNombre(nombre).size() ; i++) {
+                ArrayEspacios.remove(posicion);
             }
-            cuantosEspacio--;
         }
         else
             System.err.println("POSICIÓN INCORRECTA");

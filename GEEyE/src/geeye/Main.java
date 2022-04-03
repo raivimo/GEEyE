@@ -39,7 +39,7 @@ public class Main {
     
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Eventos equipo = new Eventos ();
+        Evento equipo = new Evento ();
         boolean salir = false;
         
         do {
@@ -76,9 +76,14 @@ public class Main {
                 case 5:
                     System.out.println("--------  BORRAR ESPACIO ----------");
                     equipo.verEspacios();
-                    System.out.println("Intruduce nº posición del espacio que deseas borrar");
-                    int borrarEspacio = in.nextInt();
-                    equipo.eliminarEspacio(borrarEspacio);
+                    in.nextLine();
+                    System.out.println("Intruduce nombre del espacio a borrar");
+                    String borrarEspacio = in.nextLine();
+                    equipo.buscarNombre(borrarEspacio);
+                    System.out.println("Introduce la posicion");
+                    
+                    int posicion = in.nextInt();
+                    equipo.eliminarEspacio(borrarEspacio, posicion);
                     System.out.println("");
                     break;
                 case 6:
