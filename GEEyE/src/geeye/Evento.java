@@ -141,6 +141,7 @@ public class Evento {
 
     
     public ArrayList<Reserva> buscarReserva(int idReserva){
+        ArrayList<Reserva> encontrados = new ArrayList();
         for (int i = 0; i < ArrayReservas.size() ; i++) {
             if(ArrayReservas.get(i).getIdReserva() == idReserva)
                 ArrayReservas.get(i).imprimir();
